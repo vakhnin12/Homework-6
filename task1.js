@@ -60,13 +60,9 @@ console.log("")
 
 
 function some(arr, callback) {
-    const resultArray = [];
     for (let value of arr) {
         const resultCallback = callback(value);
-        resultArray.push(callback(value))
-    };
-    for (let boolean of resultArray) {
-        if (boolean === true) {
+        if (resultCallback === true) {
             return true
         }
     } return false
@@ -79,17 +75,14 @@ console.log("some", r2);
 console.log("")
 
 function every(arr, callback) {
-    const resultArray = [];
     for (let value of arr) {
         const resultCallback = callback(value);
-        resultArray.push(callback(value))
-    };
-    for (let boolean of resultArray) {
-        if (boolean === false) {
+        if (resultCallback === false) {
             return false
         }
     } return true
 };
+
 
 const r3 = every(data, isEven);
 
